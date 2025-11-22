@@ -46,8 +46,7 @@ const Intro = ({ onStart }) => {
                     fontWeight: 300
                 }}
             >
-                Precision selection for the discerning operative.
-                Identify your exclusions to begin.
+                Select your main agents. We'll recommend a new operative for you to master.
             </motion.p>
 
             <motion.button

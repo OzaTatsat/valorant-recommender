@@ -89,7 +89,7 @@ const AgentSelector = ({ agents, onConfirm }) => {
                     marginBottom: '3rem',
                     fontSize: '0.9rem'
                 }}>
-                    These will be excluded from recommendations. ({selected.length}/3)
+                    Select the 3 agents you play daily. We'll exclude them to find your next challenge. ({selected.length}/3)
                 </p>
             </motion.div>
 
