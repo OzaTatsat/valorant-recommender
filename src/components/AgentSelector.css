@@ -1,0 +1,147 @@
+.selector-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+    .role-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+.role-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.role-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.role-header h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.agent-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.8rem;
+}
+
+.agent-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem 0.5rem;
+    border: 1px solid var(--border);
+    background-color: transparent;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.agent-button:hover {
+    border-color: var(--text-secondary);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.agent-button.selected {
+    border-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.agent-button.disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.agent-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    transition: filter 0.3s ease;
+}
+
+.agent-button.selected .agent-icon {
+    filter: grayscale(0%);
+}
+
+.agent-button:not(.selected) .agent-icon {
+    filter: grayscale(100%);
+}
+
+.agent-button:hover .agent-icon {
+    filter: grayscale(50%);
+}
+
+.agent-name {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.agent-button.selected .agent-name {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.confirm-button-container {
+    position: fixed;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.confirm-button-container.active {
+    pointer-events: auto;
+}
+
+.confirm-button {
+    padding: 1rem 4rem;
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.confirm-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.confirm-button:active {
+    transform: translateY(1px);
+}
